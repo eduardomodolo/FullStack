@@ -46,6 +46,7 @@ body{
 .texto{
     text-align: center;
     font-size: 23px;
+    color: indigo;
 }
 
 .imagens{
@@ -53,13 +54,30 @@ body{
     word-spacing: 120px;
 }
 
-.video{
+#iframe{
     text-align: center;
-
+    word-spacing: 120px;
 }
 
-iframe{ display: inline-block;
-    width: 400px;
-    height: 400px;
-}    
+.fixed{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: red;
+    border-style: dashed;
     
+  }
+
+  .cabecalho{
+    font-weight: bold;
+    color: red;
+    padding: 10px;
+  }
+  .conteudo{
+    padding: 15px;
+  }
+  #tabela_links{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
