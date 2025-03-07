@@ -1,33 +1,65 @@
 body{
-    background-color: lightgray
+    background-color: lightgray;
+    width: 80%;
 }
 #imagem_1{
     height: 200;
     width: 200;
     position: absolute;
-    top: 20px;
-    left: 100px;
+    top: 30px;
+    left: 40px;
     right: 100px;
 }
-#texto_c{
+#texto_caixa{
    text-align: center;
    font-size: larger;
    color: darkgreen;
    position: absolute;
-     top: 60px;
-    left: 800px;
-}
+     top: 80px;
+    left: 765px;
+}           
 #fogo_imagem{
     position: relative;
-    left: 1600px;
-    height: 200;
-    width: 200;
+    left: 1450px;
+    height: 200px;
+    width: 200px;
 }
 .primeiro_quadrado{
-    border: 5px solid darkblue;
+    border: 4px solid darkblue;
     background-color: bisque;
     top: 300px;
+    padding: 17px;
 }
-.texto_foto{
+#texto_foto{
     text-align: center;
+    word-spacing: 120px;
+    color: darkred;
+    background-color:  lightskyblue;
+    padding: 10px;
 }
+.titulos{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.texto{
+    text-align: center;
+    font-size: 23px;
+}
+
+.imagens{
+    text-align: center;
+    word-spacing: 120px;
+}
+
+.video{
+    text-align: center;
+
+}
+
+iframe{ display: inline-block;
+    width: 400px;
+    height: 400px;
+}    
+    
