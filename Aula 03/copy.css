@@ -80,4 +80,28 @@ body{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    top: 50%;
+    left: 50%;
   }
+#imagem_html{
+    position: absolute;
+    left: 20px;
+    top: 2460px;
+}
+#desejamos{
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    left: 620px;
+    top: 2500px;
+}
+#imagem_css{
+    position: absolute;
+    left: 1535px;
+    top: 2460px;
+}
+.segundo_quadrado{
+    border: 2px;
+    background-color: bisque;
+    padding: 110px;
+}
