@@ -1,0 +1,23 @@
+#about{
+    
+    color: white;
+    font-size: large;
+}
+#friends{
+    font-size: x-large;
+    color: white;
+}
+#reunion{
+    font-size: x-large;
+}
+.caixa{
+    background-color: rgb(78, 39, 78);
+    color: white;
+    font-weight: bold;
+    width: 130px;
+    height: 130px;
+   
+    
+
+   
+}
