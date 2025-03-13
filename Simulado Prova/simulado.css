@@ -11,13 +11,42 @@
     font-size: x-large;
 }
 .caixa{
-    background-color: rgb(78, 39, 78);
+    background-color: rgb(90, 67, 90);
     color: white;
     font-weight: bold;
     width: 130px;
     height: 130px;
-   
-    
-
-   
+    padding: 10px;
+}
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.link_inicio{
+    text-align: center;
+}
+#imagem_centro{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+#tabela{
+    position: relative;
+    display: flex;
+    top: -35px;
+}
+#life{
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 540px;
+    left: 990px;
+}
+#update{
+    position: absolute;
+    top: 580px;
+    left: 730px;
+    font-size: medium;
+    color: rgba(94, 2, 94, 0.87);
 }
