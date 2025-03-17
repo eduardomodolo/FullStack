@@ -1,0 +1,46 @@
+.cabecalho{
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-size: 40px;
+    color: rgb(3, 78, 3);
+    font-weight: bold;
+}
+#home{
+   display: flex;
+   justify-content: space-evenly;
+   color: darkred;
+   background-color: aqua;
+   font-weight: bold;
+}
+.texto{
+    text-align: center;
+    font-size: medium;
+    
+}
+h1{
+    font-size: 20px;
+}
+.livros{
+    display: flex;
+    justify-content: space-evenly;
+}
+.links{
+    display: flex;
+    justify-content: space-evenly;
+}
+#tabela{
+   align-items: center;
+   margin-left: auto;
+   margin-right: auto;
+    border-style: dashed;
+    border-color: red;
+}
+#titulo{
+    color: red;
+    font-weight: bold;
+}
+
+
