@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogo do Mario</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="jogo.html">Início</a>
+      <a href="dev.html">Desenvolvedores</a>
+      <a href="jogo.html">Jogo</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Jogo: Mario no mundo do Sonic</h1>
+    <p>
+      Ajude o Mario a sobreviver pulando os canos no cenário do Sonic!
+      <br />
+      <strong>Controles:</strong> Pressione <kbd>Espaço</kbd> para pular.
+    </p>
+
+    <canvas id="gameCanvas" width="640" height="360"></canvas>
+    <br />
+    <button id="startBtn">Iniciar Jogo</button>
+    <button id="resetBtn" style="display:none;">Reiniciar</button>
+
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
