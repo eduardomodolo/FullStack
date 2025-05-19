@@ -21,8 +21,3 @@ server.listen(3000);
 // mensagem exibida no console para debug
 console. log("servidor rodando... ".rainbow) ;
 require("colors")
-
-
-
-
-
