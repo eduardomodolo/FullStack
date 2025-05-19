@@ -14,42 +14,42 @@ imgCano.src = "imagens/cano.png";
 imgFundo.src = "imagens/fundo.png";
 
 // Variáveis do jogo
-let gravity = 0.35; // Gravidade
-let velocity = 0; // Velocidade do Mario
-const chaoAltura = 90; // Altura do chão verde, onde Mario e canos ficam
+let gravity = 0.35; 
+let velocity = 0; 
+const chaoAltura = 90; 
 
 // Objeto do Mario
 let mario = {
   x: 50,
-  y: canvas.height - 70, // Posição do Mario
+  y: canvas.height - 70, 
   width: 48,
   height: 48,
-  jumping: false // Estado de pulo
+  jumping: false 
 };
 
 // Variáveis de controle do jogo
-let pipes = []; // Armazena os canos
-let frame = 0; // Contador de frames
-let score = 0; // Pontuação atual
-let maxScore = localStorage.getItem("maxScore") || 0; // Recorde salvo
-let gameSpeed = 1.8; // Velocidade do jogo
-let gameRunning = false; // Status do jogo
-let animationFrameId = null; // ID do frame da animação
+let pipes = []; 
+let frame = 0; 
+let score = 0; 
+let maxScore = localStorage.getItem("maxScore") || 0; o
+let gameSpeed = 1.8;
+let gameRunning = false; 
+let animationFrameId = null; 
 
 // Função para resetar o jogo
 function resetGame() {
-  mario.y = canvas.height - mario.height - chaoAltura; // Reinicia a posição do Mario
-  velocity = 0; // Reinicia a velocidade
-  pipes = []; // Limpa os canos
-  frame = 0; // Reseta o contador de frames
-  score = 0; // Resetar a pontuação
-  gameSpeed = 1.8; // Velocidade inicial do jogo
-  gameRunning = true; // Iniciar o jogo
-  startBtn.disabled = true; // Desabilita o botão de início
-  resetBtn.style.display = "none"; // Esconde o botão de reset
+  mario.y = canvas.height - mario.height - chaoAltura; o
+  velocity = 0; 
+  pipes = []; 
+  frame = 0; 
+  score = 0;
+  gameSpeed = 1.8;
+  gameRunning = true; 
+  startBtn.disabled = true; 
+  resetBtn.style.display = "none"; 
 
-  cancelAnimationFrame(animationFrameId); // Cancela a animação anterior
-  animate(); // Inicia o loop de animação
+  cancelAnimationFrame(animationFrameId); 
+  animate(); 
 }
 
 // Função para desenhar o fundo
@@ -71,15 +71,15 @@ function drawPipes() {
 
 // Função para gerar novos canos
 function spawnPipe() {
-  const pipeHeight = 30 + Math.random() * 40; // Altura aleatória do cano
+  const pipeHeight = 30 + Math.random() * 40; 
   const pipe = {
-    x: canvas.width, // Inicia fora da tela à direita
-    y: canvas.height - pipeHeight - chaoAltura, // Posição vertical do cano
-    width: 24, // Largura do cano
-    height: pipeHeight, // Altura do cano
-    passed: false // Flag para ver se o Mario já passou do cano
+    x: canvas.width, 
+    y: canvas.height - pipeHeight - chaoAltura,
+    width: 24,
+    height: pipeHeight, 
+    passed: false 
   };
-  pipes.push(pipe); // Adiciona o cano à lista de canos
+  pipes.push(pipe);  
 }
 
 // Função para detectar colisões
@@ -94,31 +94,30 @@ function detectCollision(rect1, rect2) {
 
 // Função de animação que é chamada a cada frame
 function animate() {
-  if (!gameRunning) return; // Se o jogo não estiver rodando, não faz nada
+  if (!gameRunning) return; 
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpa o canvas a cada frame
-  drawBackground(); // Desenha o fundo
-  frame++; // Incrementa o contador de frames
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawBackground(); 
+  frame++; 
 
-  if (frame % 180 === 0) spawnPipe(); // Gera um novo cano a cada 180 frames
+  if (frame % 120 === 0) spawnPipe(); 
 
-  velocity += gravity; // Aplica a gravidade ao Mario
-  mario.y += velocity; // Atualiza a posição vertical do Mario
+  velocity += gravity;
+  mario.y += velocity; 
 
   // Se o Mario atingir o chão, ele para de cair
   if (mario.y + mario.height > canvas.height - chaoAltura) {
     mario.y = canvas.height - mario.height - chaoAltura;
-    velocity = 0; // Reinicia a velocidade
-    mario.jumping = false; // O Mario não está mais pulando
+    velocity = 0; 
+    mario.jumping = false; 
   }
 
   // Atualiza a posição dos canos e verifica a pontuação
   pipes.forEach(pipe => {
-    pipe.x -= gameSpeed; // Movimento dos canos para a esquerda
-
+    pipe.x -= gameSpeed;
     if (!pipe.passed && pipe.x + pipe.width < mario.x) {
-      score++; // Incrementa a pontuação
-      pipe.passed = true; // Marca que o Mario passou pelo cano
+      score++; 
+      pipe.passed = true; 
     }
   });
 
@@ -128,15 +127,15 @@ function animate() {
   // Verifica se houve colisão
   for (let pipe of pipes) {
     if (detectCollision(mario, pipe)) {
-      gameRunning = false; // Se houver colisão, o jogo para
-      cancelAnimationFrame(animationFrameId); // Cancela a animação
+      gameRunning = false; a
+      cancelAnimationFrame(animationFrameId);
 
       if (score > maxScore) {
-        maxScore = score; // Atualiza o recorde
-        localStorage.setItem("maxScore", maxScore); // Salva o recorde
+        maxScore = score; 
+        localStorage.setItem("maxScore", maxScore); e
       }
 
-      resetBtn.style.display = "inline"; // Exibe o botão de reset
+      resetBtn.style.display = "inline";
       return;
     }
   }
@@ -144,8 +143,8 @@ function animate() {
   // Aumenta a velocidade do jogo a cada 300 frames
   if (frame % 300 === 0) gameSpeed += 0.2;
 
-  drawMario(); // Desenha o Mario
-  drawPipes(); // Desenha os canos
+  drawMario(); 
+  drawPipes(); 
 
   // Exibe a pontuação e o recorde
   ctx.fillStyle = "black";
@@ -153,27 +152,27 @@ function animate() {
   ctx.fillText("Pontuação: " + score, 10, 25);
   ctx.fillText("Recorde: " + maxScore, 10, 50);
 
-  animationFrameId = requestAnimationFrame(animate); // Chama o próximo frame de animação
+  animationFrameId = requestAnimationFrame(animate);
 }
 
 // Evento de tecla pressionada (espaço para pular)
 document.addEventListener("keydown", e => {
   if (e.code === "Space" && !mario.jumping && gameRunning) {
-    velocity = -13; // Dá um impulso para o Mario pular
-    mario.jumping = true; // Marca que o Mario está pulando
+    velocity = -11; 
+    mario.jumping = true; 
   }
 });
 
 // Evento para iniciar o jogo ao clicar no botão "Iniciar"
 startBtn.addEventListener("click", () => {
   if (!gameRunning) {
-    resetGame(); // Reinicia o jogo
+    resetGame(); 
   }
 });
 
 // Evento para resetar o jogo ao clicar no botão "Resetar"
 resetBtn.addEventListener("click", () => {
-  resetGame(); // Reinicia o jogo
+  resetGame(); 
 });
 
 
